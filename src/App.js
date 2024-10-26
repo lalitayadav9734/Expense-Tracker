@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ExpenseProvider } from './Components/ExpenseContext';
+import ExpenseList from './Components/ExpenseList';
+import ExpenseForm from './Components/ExpenseForm';
+import './App.css'; // Import CSS for styling
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <ExpenseProvider>
+           
+                <h1>Expense Tracker</h1>
+                <ExpenseForm />
+                <ExpenseList />
+          
+        </ExpenseProvider>
+    );
+};
 
 export default App;
